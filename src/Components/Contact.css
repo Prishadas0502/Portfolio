@@ -1,0 +1,36 @@
+.contact-container {
+  display: flex; /* Flexbox for side-by-side layout */
+  justify-content: space-between; /* Add spacing between the map and the form */
+  gap: 20px; /*Space between map and form */
+  padding: 20px;
+  align-items: flex-start; /* Align items to the top */
+  margin: 2rem auto;
+}
+
+.google-map {
+  flex: 1; /* Allow the map to take up equal space */
+  max-width: 45%; /* Limit the width of the map */
+  margin-left: auto;
+}
+
+.contact-form {
+  flex: 1; /* Allow the form to take up equal space */
+  max-width: 45%; /* Limit the width of the form */
+  margin-right: auto;
+}
+
+.contact h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center-align content */
+  }
+
+  .google-map,
+  .contact-form {
+    max-width: 100%; /* Take full width on small screens */
+  }
+}

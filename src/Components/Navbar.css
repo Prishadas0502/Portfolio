@@ -1,0 +1,104 @@
+/* Base Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    font-family: Arial, sans-serif;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;  /* Increased for better spacing */
+    z-index: 1000;
+}
+
+/* Scrolled effect */
+.navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Navbar brand logo */
+.navbar-brand {
+    font-size: 1.5rem;
+    color: #0000ff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 0;
+}
+
+/* Navbar links container */
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    align-items: center;
+}
+
+/* Adjusting links to look like buttons */
+.navbar-links a {
+    text-decoration: none;
+    color: #0000ff;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+/* Link hover effect */
+.navbar-links a:hover {
+    color: #000099;
+}
+
+/* Underline animation on hover */
+.navbar-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0000ff;
+    transition: width 0.3s ease;
+}
+
+.navbar-links a:hover::after {
+    width: 100%;
+}
+
+/* Active link underline */
+.navbar-links li.active a::after {
+    width: 100%;
+}
+
+/* Smooth scrolling behavior for the whole page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Prevent content from hiding behind navbar */
+body {
+    padding-top: 60px;  /* Adjust based on navbar height */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+    }
+    .navbar-links {
+        gap: 1rem;
+    }
+    .navbar-links a {
+        font-size: 0.9rem;
+    }
+}
